@@ -3,33 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
 </head>
-<h1>Information</h1>
 <body>
-<table>
-    <thead>
-
-    <tr>
-
         <h1 th:text="${person.id}"></h1>
         <h1 th:text="${person.name}"></h1>
-        <h1 th:text="${person.birthPlace}"></h1>
+        <h1 th:text="${person.getBirthPlace()}"></h1>
         <h1 th:text="${person.birthDate}"></h1>
         <h1 th:text="${person.email}"></h1>
 
         <ul>
             <li th:each="order : ${orders}" th:text="${orders}"></li>
         </ul>
-    </tr>
-
-    </thead>
-
-
-
-
-
-</table>
 
 <a th:href="@{'/order/new/' + ${person.id}}">
     <p>New Order</p>

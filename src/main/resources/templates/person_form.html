@@ -8,6 +8,10 @@
 <form method="post" th:action="@{/person/add}">
   <label for="name">Name</label>
   <input type="text" id="name" placeholder="Name" th:field="*{person.name}">
+  <label for="birth_place">Birth Place</label>
+  <input type="text" id="birth_place" placeholder="Birth Place" th:field="*{person.birthPlace}">
+  <label for="birth_date">Birth Date</label>
+    <input type="text" id="birth_date" placeholder="Birth Date" th:field="*{person.birthDate}">
   <button type="submit">OK</button>
 </form>
 
