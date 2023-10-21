@@ -18,7 +18,7 @@ public class PersonController {
     public String getPersonById(Model model, @PathVariable Integer id) {
         Person person = entityService.getPersonById(id);
         model.addAttribute("orders",entityService.getAllOrdersByPerson(person));
-        model.addAttribute("person",entityService.getPersonById(id));
+        model.addAttribute("person",person);
         return "person";
     }
     @GetMapping("/new")
