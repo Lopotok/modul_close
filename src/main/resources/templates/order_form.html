@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
+<h1>New Order</h1>
 <body>
-$END$
+<form method="post" th:action="@{'/order/add/' + ${personId}}">
+    <label for="place">Name</label>
+    <input type="text" id="place" placeholder="Place" th:field="*{order.place}">
+    <label for="order_type">Name</label>
+    <input type="text" id="order_type" placeholder="Type" th:field="*{order.orderType}">
+    <label for="amount">Name</label>
+    <input type="text" id="amount" placeholder="Amount" th:field="*{order.amount}">
+
+    <button type="submit">OK</button>
+</form>
+
 </body>
 </html>

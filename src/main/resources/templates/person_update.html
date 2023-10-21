@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
+<h1>Update</h1>
 <body>
-$END$
+<form method="post" th:action="@{'/person/update/' + ${person.id}}">
+    <input type="hidden" th:value="${person.id}" th:field="*{person.id}">
+    <label for="name">Name</label>
+    <input type="text" id="name" th:value="${person.name}" th:placeholder="${person.name}" th:field="*{person.name}">
+    <button type="submit">OK</button>
+</form>
+
 </body>
 </html>

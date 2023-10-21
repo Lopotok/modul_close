@@ -1,0 +1,38 @@
+DROP DATABASE modul_close;
+CREATE DATABASE modul_close;
+USE modul_close;
+
+CREATE TABLE people(
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(50),
+birth_place VARCHAR(50),
+birth_date DATE,
+email VARCHAR(50)
+);
+
+CREATE TABLE order_info (
+id INT PRIMARY KEY AUTO_INCREMENT,
+place VARCHAR(50),
+order_type VARCHAR(50),
+amount DOUBLE,
+people_id INT,
+FOREIGN KEY (people_id) REFERENCES people(id)
+);
+
+INSERT INTO people (name, birth_place,birth_date,email) VALUES
+('Toth Boglarka', 'Budapest','1990-05-15', 'boglarka.toth@example.com'),
+('Fulop Levente', 'Eger','1982-12-05', 'levente.fulop@example.com'),
+('Arvai Bela', 'Mezokovesd','1978-03-10', 'janos.arvai@example.com'),
+('Kelemen Agnes', 'Pecs','1984-09-11', 'agnes.kelemen@example.com'),
+('Kovacs Peter', 'Gyongyos','1988-04-04', 'peter.kovacs@example.com');
+
+INSERT INTO order_info (place, order_type, amount,people_id) VALUES
+('Don Pepe','Elelmiszer', 1800.00, 1),
+('Iphone tolto','Elektronika', 10000.00, 2),
+('Udito','Italok', 5000.00, 3),
+('Farmer','Ruhazat', 8000.00, 4),
+('Kave Kapszula','Italok', 6000.00, 5),
+('Mozijegy','Szorakozas', 5500.00, 5);
+
+SELECT * FROM people;
+SELECT * FROM order_info;
